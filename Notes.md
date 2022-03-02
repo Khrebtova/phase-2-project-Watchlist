@@ -15,7 +15,7 @@ Watchlist app will help user track all the TV-shows and movies what he/she wante
     2. /signup - Signup
     3. /login - Login
     4. /watchlist/new - CharacterForm
-    5. /characters - CharactersList
+    5. /watchlist - watchlist
 
 * use json-server : array of objects(movies/tvShows)
 
