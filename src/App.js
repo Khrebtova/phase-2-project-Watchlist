@@ -42,8 +42,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/watchlist" element={<Watchlist onDeleteShow={deleteShow} onUpdateShow={updateShow} shows={shows}/>} />
             <Route path='/watchlist/tvseries' element={<TVseries onDeleteShow={deleteShow} onUpdateShow={updateShow} shows={shows}/>} />
-            <Route path='/watchlist/movies' element={<Movies onDeleteShow={deleteShow} onUpdateShow={updateShow} shows={shows}/>} />
-            {/* <Route path='/watchlist/new' element={<NewMovieForm />} /> */}
+            <Route path='/watchlist/movies' element={<Movies onDeleteShow={deleteShow} onUpdateShow={updateShow} shows={shows}/>} />            
         </Routes>
       </Router>
     </div>
