@@ -2,16 +2,16 @@
   "shows": [
     {
       "title": "GOT",
-      "image": "https://upload.wikimedia.org/wikipedia/en/d/d8/Game_of_Thrones_title_card.jpg",
+      "image": "https://m.media-amazon.com/images/I/51-9Aez4ewL._AC_SY580_.jpg",
       "type": "TVseries",
-      "watched": false,
+      "watched": true,
       "id": 1
     },
     {
       "title": "Baywatch",
       "image": "https://m.media-amazon.com/images/I/A1nmKRtGjOL._SL1500_.jpg",
       "type": "movie",
-      "watched": false,
+      "watched": true,
       "id": 2
     },
     {
@@ -41,6 +41,20 @@
       "type": "TVseries",
       "watched": false,
       "id": 6
+    },
+    {
+      "title": "Killing Eve",
+      "image": "https://m.media-amazon.com/images/I/818Db99jvlL._SY445_.jpg",
+      "type": "TVseries",
+      "watched": false,
+      "id": 7
+    },
+    {
+      "title": "doctor strange in the multiverse of madness",
+      "image": "https://static.wikia.nocookie.net/marvelcinematicuniverse/images/b/be/Doctor_Strange_Poster_2.jpg",
+      "type": "movie",
+      "watched": false,
+      "id": 8
     }
   ]
 }

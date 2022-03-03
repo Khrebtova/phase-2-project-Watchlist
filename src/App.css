@@ -1,32 +1,31 @@
 
-:root {
+/* :root {
   --green: rgb(39, 189, 39);
-}
+} */
 
 * {
-  margin: 0;
-  padding: 0;
+  margin: 1;
+  padding: 1;
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Playfair Display", serif;
+  font-family: "Gill Sans", sans-serif;
 }
 
-h2 {
-  margin-bottom: 1rem;
+main {
+  padding: 0 1rem;
 }
+
+
 
 button {
   padding: 0.25rem 1rem;
+  margin-left: 1rem;
   font-family: inherit;
   border: solid;
   border-color: black;
   cursor: pointer;
-}
-
-button .watched {
-  background-color: rgb(236, 196, 17);
 }
 
 button.primary {
@@ -40,35 +39,51 @@ button.primary {
 }
 
 header h1 {
-  font-size: 2.5em;
-  font-weight: 900;
-  text-align: center;
-  padding: 0.5rem 0;
+  text-align: center;  
 }
+
+header .login {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: right;
+  margin-left: 1rem;
+  
+}
+
 header .navbar {
   padding: 1rem 1rem;
   margin: 1rem 1rem;
-  background-color: rgb(236, 196, 17);
   display: flex;
-  justify-content: center;
+  justify-content: left ;
 }
 
-.logo {
-  height: 5px;
-  width: 5px;
-  font-size: 1.25em;
-  padding-left: 0.5rem;
-  color: transparent;
-  text-shadow: 0 0 0 var(--green);
+.home {
+  padding: 1rem 1rem;
+  /* margin: 1rem 1rem; */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
-main {
-  padding: 0 1rem;
+.navigateBtn {
+  width: 300px;
+  padding: 1rem 1rem;
+  margin: 1rem 1rem;
+  background-color: rgb(241, 112, 6);
+  font-size: large;
+  font-weight: 600;
+}
+
+h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center; 
 }
 
 .new-movie-form {
-  padding: 2rem 1rem;
-  margin: 2rem 2rem;
+  padding: 1rem 1rem;
+  margin: 1rem 1rem;
   background-color: rgb(236, 196, 17);
 }
 
@@ -80,7 +95,8 @@ main {
 .new-movie-form input {
   margin-right: 1rem;
   margin-left: 1rem;
-  flex: 2;
+  flex: 1;
+  
 }
 
 .new-movie-form button {
@@ -128,10 +144,20 @@ input:focus {
   width: 70%;
 }
 
-.card button {
-  
+.card button {  
   margin-top: 0.5rem;
+  margin: 0rem 0rem;
 }
+
+.card .notWatched {
+  background-color: rgb(241, 112, 6);
+}
+
+.card .delete {
+  background-color: rgb(236, 196, 17);
+}
+
+
 
 @media (min-width: 768px) {
   .cards {

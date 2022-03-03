@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 
-const NewMovieForm = () => {
+const NewMovieForm = ({onAddShow}) => {
     const [newShow, setNewShow] = useState({  
         "title": "",
-        "image": "",
+        "image": "https://mysteriouswritings.com/wp-content/uploads/2017/02/movie.jpg",
         "type": "",
         "watched" : false
     })
@@ -27,8 +27,8 @@ const NewMovieForm = () => {
            body : JSON.stringify(newShow)
        })
        .then(resp => resp.json())
-       .then(data => console.log(data))
-       
+       .then(data => onAddShow(data))
+
     }
 
    

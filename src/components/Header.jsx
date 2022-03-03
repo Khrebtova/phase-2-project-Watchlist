@@ -1,28 +1,31 @@
 import React, { useContext } from "react";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../Context/User'
 
 const Header = () => {
+    const navigate = useNavigate()
     const [isLoggedIn, setIsLoggedIn] = useContext(UserContext)
     const handleClick = () =>{
         setIsLoggedIn(!isLoggedIn)
+        navigate("/")
     }
 
     const loggedInLinks =()=>{
         return(
             <nav className='navbar'>
-                <Link to="/" > Home</Link>
-                <Link to="/watchlist">Watchlist</Link>
-                <Link to="/watchlist/new" >Add to your watchlist</Link>            
-                <a href='#' onClick={handleClick}>Logout</a>
+                <Link to="/"> Home</Link>
+                <Link to="/watchlist">All Watchlist</Link>
+                <Link to="/watchlist/movies">Movies</Link>
+                <Link to="/watchlist/tvseries">TV Series</Link>
+                <button className="login" onClick={handleClick}> Logout</button>           
             </nav>
         )
     }
     const loggedOutLinks =()=>{
         return(
             <nav className='navbar'>
-                <Link to="/" > Home</Link>                        
-                <a href='#' onClick={handleClick}>Login</a>
+                <Link to="/">Home</Link>
+                <button className="login" onClick={handleClick}> Login</button>
             </nav>
         )
     }
@@ -30,8 +33,8 @@ const Header = () => {
     
     return (
     <header>
-        <h1>Your Personal Watchlist</h1>
         {isLoggedIn ? loggedInLinks() : loggedOutLinks() }
+        <h1>Your Personal Watchlist</h1>
     </header>
 
     )
