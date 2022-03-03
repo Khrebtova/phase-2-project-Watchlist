@@ -1,4 +1,46 @@
 {
-    "shows": []
-
+  "shows": [
+    {
+      "title": "GOT",
+      "image": "https://upload.wikimedia.org/wikipedia/en/d/d8/Game_of_Thrones_title_card.jpg",
+      "type": "TVseries",
+      "watched": false,
+      "id": 1
+    },
+    {
+      "title": "Baywatch",
+      "image": "https://m.media-amazon.com/images/I/A1nmKRtGjOL._SL1500_.jpg",
+      "type": "movie",
+      "watched": false,
+      "id": 2
+    },
+    {
+      "title": "True Detective",
+      "image": "https://upload.wikimedia.org/wikipedia/en/3/37/True_Detective_season_1.png",
+      "type": "TVseries",
+      "watched": false,
+      "id": 3
+    },
+    {
+      "title": "Spider-Man: No Way Home",
+      "image": "https://m.media-amazon.com/images/M/MV5BZWMyYzFjYTYtNTRjYi00OGExLWE2YzgtOGRmYjAxZTU3NzBiXkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_FMjpg_UX1000_.jpg",
+      "type": "movie",
+      "watched": false,
+      "id": 4
+    },
+    {
+      "title": "Sing 2",
+      "image": "https://imageio.forbes.com/specials-images/imageserve/61be205770d931e85316cac4/Sing-2-poster/0x0.jpg?fit=bounds&format=jpg&width=960",
+      "type": "movie",
+      "watched": false,
+      "id": 5
+    },
+    {
+      "title": "Inventing Anna",
+      "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTxIf-uuDu5GajlAvhHYJzjW_LhcYi-cmMbOCBX47IcTfLg2Dav",
+      "type": "TVseries",
+      "watched": false,
+      "id": 6
+    }
+  ]
 }

@@ -5,6 +5,7 @@ const NewMovieForm = () => {
         "title": "",
         "image": "",
         "type": "",
+        "watched" : false
     })
   
     function handleInputChange(e){
@@ -16,7 +17,18 @@ const NewMovieForm = () => {
 
     const handleSubmit =(e)=>{
        e.preventDefault()
-       console.log("submit", newShow) 
+       
+       fetch(`http://localhost:3001/shows`, {
+           method : "POST",
+           headers: {
+            "Accept": "applocation/json",
+            "Content-type" : "application/json"
+           },
+           body : JSON.stringify(newShow)
+       })
+       .then(resp => resp.json())
+       .then(data => console.log(data))
+       
     }
 
    
