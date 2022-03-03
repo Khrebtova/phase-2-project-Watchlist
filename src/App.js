@@ -1,6 +1,7 @@
 import './App.css';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { UserContext } from './Context/User';
 import Header from './components/Header';
 import NewMovieForm from './components/NewMovieForm';
 import Home from './components/Home';
@@ -9,6 +10,7 @@ import TVseries from './components/TVseries';
 import Movies from './components/Movies';
 
 function App() {
+  const [isLoggedIn] = useContext(UserContext)
   const [shows, setShows] = useState([])
 
   useEffect(()=>{
@@ -35,7 +37,7 @@ function App() {
     <div className="app">
       <Router>
         <Header />
-        <NewMovieForm onAddShow={addShow}/>
+        {isLoggedIn ? <NewMovieForm onAddShow={addShow}/> : null}
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/watchlist" element={<Watchlist onDeleteShow={deleteShow} onUpdateShow={updateShow} shows={shows}/>} />

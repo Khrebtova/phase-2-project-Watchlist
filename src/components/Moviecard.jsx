@@ -1,8 +1,7 @@
-import React , {useState} from 'react';
+import React  from 'react';
 import { dataURL, headers } from '../Global';
 
 const Moviecard = ({show, onDeleteShow, onUpdateShow}) => {
-    const [watched, setWatched] = useState('')
     
     const handleDelete =()=> {
         fetch(dataURL+`/${show.id}`, {
@@ -15,7 +14,6 @@ const Moviecard = ({show, onDeleteShow, onUpdateShow}) => {
     const handleWatchedClick = () => {
         let isWatched;
         show.watched ? isWatched = false : isWatched = true;
-        setWatched(isWatched)
         console.log(show.id)
         fetch(dataURL+`/${show.id}`, {
             method: "PATCH",

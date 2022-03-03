@@ -55,6 +55,13 @@
       "type": "movie",
       "watched": false,
       "id": 8
+    },
+    {
+      "title": "west side story",
+      "image": "https://images.fandango.com/images/spotlight/WestSideStory_Aw.jpg",
+      "type": "",
+      "watched": false,
+      "id": 9
     }
   ]
 }

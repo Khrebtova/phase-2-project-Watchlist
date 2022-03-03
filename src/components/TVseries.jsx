@@ -1,10 +1,15 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom'
+import React, {useContext} from 'react';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../Context/User';
 import Moviecard from './Moviecard';
 
 const TVseries = ({shows, onDeleteShow, onUpdateShow}) => {
-    const tvseries = shows.filter(show => show.type === "TVseries")
+  const [isLoggedIn, setIsLoggedIn] = useContext(UserContext);
+  
+  const tvseries = shows.filter(show => show.type === "TVseries")
+    
     const navigate = useNavigate()
+    
     const handleClick =(e)=>{
       console.log("go to ", e.target.name)
       if(e.target.name === "watchlist"){
@@ -14,14 +19,21 @@ const TVseries = ({shows, onDeleteShow, onUpdateShow}) => {
       }        
     }
 
-    return (
-    <div>
-      <button name="watchlist" onClick={handleClick}>Show my whole watchlist</button>
-      <button name="movies" onClick={handleClick}>Show movies</button>
-      <ul className='cards'>
-        {tvseries.map(show => <Moviecard key={show.id} show={show} onDeleteShow={onDeleteShow} onUpdateShow={onUpdateShow}/>)}
-      </ul>
-    </div>
+    const loggedInPage =()=>{
+      return (
+        <div>
+          <button name="watchlist" onClick={handleClick}>Show my whole watchlist</button>
+          <button name="movies" onClick={handleClick}>Show movies</button>
+          <ul className='cards'>
+            {tvseries.map(show => <Moviecard key={show.id} show={show} onDeleteShow={onDeleteShow} onUpdateShow={onUpdateShow}/>)}
+          </ul>
+        </div>
+      )}
+
+  return (
+    <>
+    {isLoggedIn ? loggedInPage() : <h2> Login to see your TV series watchlist!</h2>}
+    </>
   )
 }
 

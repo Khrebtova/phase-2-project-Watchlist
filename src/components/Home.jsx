@@ -1,10 +1,12 @@
-import React, { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { UserContext } from '../Context/User'
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../Context/User';
 
 const Home = () => {
     const [isLoggedIn, setIsLoggedIn] = useContext(UserContext)
+    
     const navigate = useNavigate()
+    
     const handleClick =(e)=>{
         console.log("go to ", e.target.name)
         if(e.target.name === "watchlist"){
@@ -27,7 +29,7 @@ const Home = () => {
 
     return (
         <div>
-            {isLoggedIn ? loggedInLinks() : <h2> Login to see your watchlist!</h2>}
+            {isLoggedIn ? loggedInLinks() : <h2> Login to get started!</h2>}
         </div>
     )
 }

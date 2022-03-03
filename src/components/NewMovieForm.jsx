@@ -7,7 +7,7 @@ const NewMovieForm = ({onAddShow}) => {
         "type": "",
         "watched" : false
     })
-  
+    
     function handleInputChange(e){
       const key = e.target.name;
       const value = e.target.value
@@ -27,7 +27,10 @@ const NewMovieForm = ({onAddShow}) => {
            body : JSON.stringify(newShow)
        })
        .then(resp => resp.json())
-       .then(data => onAddShow(data))
+       .then(data => {
+          console.log(data);
+          // onAddShow(data)
+        })
 
     }
 

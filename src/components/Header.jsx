@@ -34,7 +34,7 @@ const Header = () => {
     return (
     <header>
         {isLoggedIn ? loggedInLinks() : loggedOutLinks() }
-        <h1>Your Personal Watchlist</h1>
+        {isLoggedIn? <h1>Welcome to Your Personal Watchlist</h1> : <h1>Are You Ready To Create Your Personal Watchlist?</h1>}
     </header>
 
     )
