@@ -32,7 +32,7 @@
       "title": "Sing 2",
       "image": "https://imageio.forbes.com/specials-images/imageserve/61be205770d931e85316cac4/Sing-2-poster/0x0.jpg?fit=bounds&format=jpg&width=960",
       "type": "movie",
-      "watched": false,
+      "watched": true,
       "id": 5
     },
     {
@@ -62,6 +62,20 @@
       "type": "",
       "watched": false,
       "id": 9
+    },
+    {
+      "title": "The Wolf of Wall street ",
+      "image": "https://m.media-amazon.com/images/I/91m2MB2lYFL._SL1500_.jpg",
+      "type": "movie",
+      "watched": false,
+      "id": 12
+    },
+    {
+      "title": "Why women kill ",
+      "image": "https://cdn-2.cinemaparadiso.co.uk/2108240645251_l.jpg",
+      "type": "TVseries",
+      "watched": false,
+      "id": 13
     }
   ]
 }

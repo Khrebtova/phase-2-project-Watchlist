@@ -14,7 +14,7 @@ const Header = () => {
         return(
             <nav className='navbar'>
                 <Link to="/"> Home</Link>
-                <Link to="/watchlist">All Watchlist</Link>
+                <Link to="/watchlist">Watchlist All</Link>
                 <Link to="/watchlist/movies">Movies</Link>
                 <Link to="/watchlist/tvseries">TV Series</Link>
                 <button className="login" onClick={handleClick}> Logout</button>           

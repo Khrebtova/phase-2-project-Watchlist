@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const NewMovieForm = ({onAddShow}) => {
-    const [newShow, setNewShow] = useState({  
+  const navigate = useNavigate();  
+  const [newShow, setNewShow] = useState({  
         "title": "",
         "image": "https://mysteriouswritings.com/wp-content/uploads/2017/02/movie.jpg",
         "type": "",
@@ -16,8 +18,7 @@ const NewMovieForm = ({onAddShow}) => {
     }
 
     const handleSubmit =(e)=>{
-       e.preventDefault()
-       
+       e.preventDefault()       
        fetch(`http://localhost:3001/shows`, {
            method : "POST",
            headers: {
@@ -27,11 +28,17 @@ const NewMovieForm = ({onAddShow}) => {
            body : JSON.stringify(newShow)
        })
        .then(resp => resp.json())
-       .then(data => {
-          console.log(data);
-          // onAddShow(data)
+       .then(data => {          
+          onAddShow(data)
+          if (data.type === "movie"){
+            navigate('/watchlist/movies')
+          }else{
+            navigate("/watchlist/tvseries")
+          }
         })
-
+        e.target.title.value = "";
+        e.target.image.value = "";
+        e.target.type.value = "";
     }
 
    
@@ -39,7 +46,7 @@ const NewMovieForm = ({onAddShow}) => {
     <div className="new-movie-form">
       <h2> Add something new </h2>
       <form onSubmit={handleSubmit} >
-        <input onChange={handleInputChange} type="text" name="title" placeholder="movie title" />
+        <input onChange={handleInputChange} type="text" name="title" placeholder="Title" />
         <input onChange={handleInputChange} type="text" name="image" placeholder="Image URL" />
         <label>Movie<input onChange={handleInputChange} type="radio" name="type" value="movie" /></label>
         <label>TV Series<input onChange={handleInputChange} type="radio" name="type" value="TVseries" /></label>

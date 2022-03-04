@@ -20,7 +20,8 @@ function App() {
   }, [])
 
   const addShow =(newShow)=>{
-    setShows(...shows, newShow)
+    
+    setShows([...shows, newShow])
   }
   const deleteShow = (deletedShow) => {
     const newList = shows.filter(show => show.id !== deletedShow.id);
