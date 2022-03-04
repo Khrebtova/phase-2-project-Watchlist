@@ -3,17 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../Context/User';
 
 const Home = () => {
-    const [isLoggedIn, setIsLoggedIn] = useContext(UserContext)
+    const [isLoggedIn] = useContext(UserContext)
     
-    const navigate = useNavigate()
+    const navigate = useNavigate()   
     
-    const handleClick =(e)=>{
-        console.log("go to ", e.target.name)
-        if(e.target.name === "watchlist"){
-            navigate(`/${e.target.name}`)
-        }else{
-            navigate(`/watchlist/${e.target.name}`)
-        }        
+    const handleClick =(e)=>{        
+        navigate(`/${e.target.name}`)       
     }
     
     const loggedInLinks =() =>{

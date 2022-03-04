@@ -33,6 +33,7 @@ const Moviecard = ({show, onDeleteShow, onUpdateShow}) => {
         <img src={show.image} alt={show.title} />
         { !show.watched ? <button className="notWatched" onClick={handleWatchedClick}>Mark as watched</button> : <button onClick={handleWatchedClick}>You saw it!</button>}
         <button className="delete" onClick={handleDelete} > Delete </button>
+        
     </li>
   )
 }

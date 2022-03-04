@@ -4,17 +4,13 @@ import { UserContext } from '../Context/User';
 import Moviecard from './Moviecard';
 
 const Movies = ({shows, onDeleteShow, onUpdateShow}) => {
-  const [isLoggedIn, setIsLoggedIn] = useContext(UserContext);
-  const movies = shows.filter(show => show.type === "movie");
+  const [isLoggedIn] = useContext(UserContext);
   const navigate = useNavigate();
   
-  const handleClick =(e)=>{
-    console.log("go to ", e.target.name)
-    if(e.target.name === "watchlist"){
-      navigate(`/${e.target.name}`)
-    }else{
-      navigate(`/watchlist/${e.target.name}`)
-    }        
+  const movies = shows.filter(show => show.type === "movie");
+  
+  const handleClick =(e)=>{        
+    navigate(`/${e.target.name}`)       
   }
 
   const loggedInPage =()=>{

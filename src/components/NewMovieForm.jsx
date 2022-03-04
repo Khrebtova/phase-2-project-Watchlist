@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
+import { headers } from '../Global';
 
 const NewMovieForm = ({onAddShow}) => {
   const navigate = useNavigate();  
@@ -21,19 +22,16 @@ const NewMovieForm = ({onAddShow}) => {
        e.preventDefault()       
        fetch(`http://localhost:3001/shows`, {
            method : "POST",
-           headers: {
-            "Accept": "applocation/json",
-            "Content-type" : "application/json"
-           },
+           headers,
            body : JSON.stringify(newShow)
        })
        .then(resp => resp.json())
        .then(data => {          
           onAddShow(data)
           if (data.type === "movie"){
-            navigate('/watchlist/movies')
+            navigate('/movies')
           }else{
-            navigate("/watchlist/tvseries")
+            navigate("/tvseries")
           }
         })
         e.target.title.value = "";
