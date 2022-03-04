@@ -19,24 +19,28 @@ const NewMovieForm = ({onAddShow}) => {
     }
 
     const handleSubmit =(e)=>{
-       e.preventDefault()       
-       fetch(`http://localhost:3001/shows`, {
-           method : "POST",
-           headers,
-           body : JSON.stringify(newShow)
-       })
-       .then(resp => resp.json())
-       .then(data => {          
-          onAddShow(data)
-          if (data.type === "movie"){
-            navigate('/movies')
-          }else{
-            navigate("/tvseries")
-          }
-        })
-        e.target.title.value = "";
-        e.target.image.value = "";
-        e.target.type.value = "";
+       e.preventDefault()
+       if (newShow.title === "" || newShow.type === ""){
+         alert("enter movie title and chose Movie or TV series")
+       }else{
+         fetch(`http://localhost:3001/shows`, {
+             method : "POST",
+             headers,
+             body : JSON.stringify(newShow)
+         })
+         .then(resp => resp.json())
+         .then(data => {          
+            onAddShow(data)
+            if (data.type === "movie"){
+              navigate('/movies')
+            }else{
+              navigate("/tvseries")
+            }
+          })
+          e.target.title.value = "";
+          e.target.image.value = "";
+          e.target.type.value = "";
+       }       
     }
 
    
