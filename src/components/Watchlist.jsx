@@ -26,7 +26,6 @@ const Watchlist = ({shows, onDeleteShow, onUpdateShow}) => {
                 <button  name="movies" onClick={handleClick}>Show movies</button>
                 <button  name="tvseries" onClick={handleClick}>Show TV series</button>
                 <ul className='cards'>
-                    {/* {shows.map(show => <Moviecard key={show.id} show={show} onDeleteShow={onDeleteShow} onUpdateShow={onUpdateShow}/>)} */}
                     {showsToDisplay}
                 </ul>
             </div>
