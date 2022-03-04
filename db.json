@@ -11,7 +11,7 @@
       "title": "Baywatch",
       "image": "https://m.media-amazon.com/images/I/A1nmKRtGjOL._SL1500_.jpg",
       "type": "movie",
-      "watched": true,
+      "watched": false,
       "id": 2
     },
     {
@@ -76,13 +76,6 @@
       "type": "TVseries",
       "watched": false,
       "id": 13
-    },
-    {
-      "title": "movie",
-      "image": "https://m.media-amazon.com/images/I/91m2MB2lYFL._SL1500_.jpg",
-      "type": "movie",
-      "watched": false,
-      "id": 14
     }
   ]
 }

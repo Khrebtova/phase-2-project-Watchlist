@@ -22,9 +22,17 @@ const Home = () => {
         )
     }
 
+    const loggedOutPage =()=>{
+        return (
+            <div className='home'>
+                <h2> Login to get started!</h2>                
+            </div>
+        )
+    }
+
     return (
         <div>
-            {isLoggedIn ? loggedInLinks() : <h2> Login to get started!</h2>}
+            {isLoggedIn ? loggedInLinks() : loggedOutPage() }
         </div>
     )
 }
