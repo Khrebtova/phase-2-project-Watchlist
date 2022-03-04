@@ -1,5 +1,5 @@
 # Your Personal Watchlist #
-![MovieNight-graphic](https://user-images.githubusercontent.com/88262913/156851740-3092684a-66bc-4abf-891d-31628c122ea6.jpg)
+![MovieNight small](https://user-images.githubusercontent.com/88262913/156852259-2a032576-30e8-4433-9857-22f3bfebe0ca.jpg)
 
 ## Introduction ##
 Welcome to your personal Watchlist, how many times someone suggested you watch a new show or old but amazing movie? You always think “yes! I will remember…” ,  then Friday night comes and you have no idea what to watch? This application will help you keep track of Movies and TV Series you want to watch in the future.
