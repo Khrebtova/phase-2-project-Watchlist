@@ -2,14 +2,16 @@ import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { headers } from '../Global';
 
+
 const NewMovieForm = ({onAddShow}) => {
   const navigate = useNavigate();  
-  const [newShow, setNewShow] = useState({  
-        "title": "",
+  const defaultData ={
+    "title": "",
         "image": "https://mysteriouswritings.com/wp-content/uploads/2017/02/movie.jpg",
         "type": "",
         "watched" : false
-    })
+  }
+  const [newShow, setNewShow] = useState(defaultData)
     
     function handleInputChange(e){
       const key = e.target.name;
@@ -40,6 +42,7 @@ const NewMovieForm = ({onAddShow}) => {
           e.target.title.value = "";
           e.target.image.value = "";
           e.target.type.value = "";
+          setNewShow(defaultData)
        }       
     }
 
