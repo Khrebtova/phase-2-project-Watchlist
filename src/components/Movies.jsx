@@ -1,12 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../Context/User';
 import Moviecard from './Moviecard';
 
-const Movies = ({shows, onDeleteShow, onUpdateShow}) => {
-  const [isLoggedIn] = useContext(UserContext);
+const Movies = ({shows, onDeleteShow, onUpdateShow, isLoggedIn}) => {
   const navigate = useNavigate();
-  
   const movies = shows.filter(show => show.type === "movie");
   
   const handleClick =(e)=>{        
@@ -22,7 +19,8 @@ const Movies = ({shows, onDeleteShow, onUpdateShow}) => {
             {movies.map(show => <Moviecard key={show.id} show={show} onDeleteShow={onDeleteShow} onUpdateShow={onUpdateShow}/>)}
         </ul>
       </div>
-    )}
+    )
+  }
     
   return (
       <>

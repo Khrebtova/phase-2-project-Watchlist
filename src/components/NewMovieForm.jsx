@@ -12,7 +12,7 @@ const NewMovieForm = ({onAddShow}) => {
         "watched" : false
   }
   const [newShow, setNewShow] = useState(defaultData)
-    
+  console.log({newShow})  
     function handleInputChange(e){
       const key = e.target.name;
       const value = e.target.value

@@ -1,11 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link, useNavigate } from 'react-router-dom'
-import { UserContext } from '../Context/User'
 
-const Header = () => {
+const Header = ({isLoggedIn, setIsLoggedIn}) => {
     const navigate = useNavigate()
-    const [isLoggedIn, setIsLoggedIn] = useContext(UserContext)
-    
+        
     const handleClick = () =>{
         setIsLoggedIn(!isLoggedIn)
         navigate("/")
@@ -31,7 +29,6 @@ const Header = () => {
             </nav>
         )
     }
-
     
     return (
     <header>

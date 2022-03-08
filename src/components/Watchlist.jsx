@@ -1,17 +1,15 @@
-import React, { useContext} from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../Context/User';
+
 import Moviecard from './Moviecard';
 
-const Watchlist = ({shows, onDeleteShow, onUpdateShow}) => {
-  const [isLoggedIn] = useContext(UserContext);
+const Watchlist = ({shows, onDeleteShow, onUpdateShow, isLoggedIn}) => {
   const navigate = useNavigate();
+  const showsToDisplay = shows.map(show => <Moviecard key={show.id} show={show} onDeleteShow={onDeleteShow} onUpdateShow={onUpdateShow}/>)
             
   const handleClick =(e)=>{        
     navigate(`/${e.target.name}`)       
-  }
-            
-  const showsToDisplay = shows.map(show => <Moviecard key={show.id} show={show} onDeleteShow={onDeleteShow} onUpdateShow={onUpdateShow}/>)
+  }            
     
   const loggedInPage =()=>{
       return (

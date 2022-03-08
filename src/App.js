@@ -1,7 +1,6 @@
 import './App.css';
-import React, {useEffect, useState, useContext} from 'react';
+import React, {useEffect, useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { UserContext } from './Context/User';
 import Header from './components/Header';
 import NewMovieForm from './components/NewMovieForm';
 import Home from './components/Home';
@@ -10,7 +9,7 @@ import TVseries from './components/TVseries';
 import Movies from './components/Movies';
 
 function App() {
-  const [isLoggedIn] = useContext(UserContext)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [shows, setShows] = useState([])
 
   useEffect(()=>{
@@ -19,8 +18,7 @@ function App() {
     .then(data => setShows(data))
   }, [])
 
-  const addShow =(newShow)=>{
-    
+  const addShow =(newShow)=>{    
     setShows([...shows, newShow])
   }
   const deleteShow = (deletedShow) => {
@@ -29,7 +27,6 @@ function App() {
   }
 
   const updateShow =(updatedShow) =>{
-    console.log("you watched ", updatedShow.title)
     const newList = shows.map(show =>  show.id === updatedShow.id ? updatedShow : show)
     setShows(newList)
   }
@@ -37,13 +34,13 @@ function App() {
   return (
     <div className="app">
       <Router>
-        <Header />
+        <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
         {isLoggedIn ? <NewMovieForm onAddShow={addShow}/> : null}
         <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/watchlist" element={<Watchlist onDeleteShow={deleteShow} onUpdateShow={updateShow} shows={shows}/>} />
-            <Route path='/tvseries' element={<TVseries onDeleteShow={deleteShow} onUpdateShow={updateShow} shows={shows}/>} />
-            <Route path='/movies' element={<Movies onDeleteShow={deleteShow} onUpdateShow={updateShow} shows={shows}/>} />            
+            <Route path="/" element={<Home isLoggedIn={isLoggedIn}/>} />
+            <Route path="/watchlist" element={<Watchlist onDeleteShow={deleteShow} onUpdateShow={updateShow} shows={shows} isLoggedIn={isLoggedIn}/>} />
+            <Route path='/tvseries' element={<TVseries onDeleteShow={deleteShow} onUpdateShow={updateShow} shows={shows} isLoggedIn={isLoggedIn}/>} />
+            <Route path='/movies' element={<Movies onDeleteShow={deleteShow} onUpdateShow={updateShow} shows={shows} isLoggedIn={isLoggedIn}/>} />            
         </Routes>
       </Router>
     </div>

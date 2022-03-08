@@ -1,10 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../Context/User';
 
-const Home = () => {
-    const [isLoggedIn] = useContext(UserContext)
-    
+const Home = ({isLoggedIn}) => {
     const navigate = useNavigate()   
     
     const handleClick =(e)=>{        

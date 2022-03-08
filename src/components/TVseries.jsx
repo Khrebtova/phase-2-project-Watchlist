@@ -1,13 +1,9 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../Context/User';
 import Moviecard from './Moviecard';
 
-const TVseries = ({shows, onDeleteShow, onUpdateShow}) => {
-  const [isLoggedIn] = useContext(UserContext);
-  
+const TVseries = ({shows, onDeleteShow, onUpdateShow, isLoggedIn}) => {
   const tvseries = shows.filter(show => show.type === "TVseries")
-    
   const navigate = useNavigate()
     
   const handleClick =(e)=>{        
