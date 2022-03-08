@@ -19,3 +19,4 @@ As a user:
 Hope you'll enjoy it!
 
 ## Video walkthrough ##
+https://youtu.be/-SG1VXaxYck
