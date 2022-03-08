@@ -9,6 +9,7 @@ const Moviecard = ({show, onDeleteShow, onUpdateShow}) => {
         })
         .then(resp=>resp.json())
         .then(data => onDeleteShow(show))
+        .catch(error => alert(error))
     }
 
     const handleWatchedClick = () => {
@@ -24,6 +25,7 @@ const Moviecard = ({show, onDeleteShow, onUpdateShow}) => {
         })
         .then(resp=>resp.json())
         .then(data => onUpdateShow(data))
+        .catch(error => alert(error))
     }
 
   return (

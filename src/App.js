@@ -7,20 +7,24 @@ import Home from './components/Home';
 import Watchlist from './components/Watchlist'
 import TVseries from './components/TVseries';
 import Movies from './components/Movies';
+import { dataURL } from './Global';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [shows, setShows] = useState([])
 
   useEffect(()=>{
-    fetch('http://localhost:3001/shows')
+    document.title = "Watchlist app"
+    fetch(dataURL)
     .then(resp => resp.json())
     .then(data => setShows(data))
+    .catch(error => alert(error))
   }, [])
 
   const addShow =(newShow)=>{    
     setShows([...shows, newShow])
   }
+
   const deleteShow = (deletedShow) => {
     const newList = shows.filter(show => show.id !== deletedShow.id);
     setShows(newList)
