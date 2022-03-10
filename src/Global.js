@@ -5,3 +5,4 @@ export const headers = {
     "Content-type" : "application/json"
 }
 
+export const defaultImage = "https://mysteriouswritings.com/wp-content/uploads/2017/02/movie.jpg"
