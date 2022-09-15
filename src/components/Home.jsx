@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import Input from './Input';
 const Home = ({isLoggedIn}) => {
     const navigate = useNavigate()   
     
@@ -29,6 +29,7 @@ const Home = ({isLoggedIn}) => {
 
     return (
         <div>
+            <Input />
             {isLoggedIn ? loggedInLinks() : loggedOutPage() }
         </div>
     )

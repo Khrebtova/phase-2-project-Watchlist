@@ -17,14 +17,14 @@
     {
       "title": "Spider-Man: No Way Home",
       "image": "https://m.media-amazon.com/images/M/MV5BZWMyYzFjYTYtNTRjYi00OGExLWE2YzgtOGRmYjAxZTU3NzBiXkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_FMjpg_UX1000_.jpg",
-      "type": "movie",
+      "type": "movies",
       "watched": false,
       "id": 4
     },
     {
       "title": "Sing 2",
       "image": "https://imageio.forbes.com/specials-images/imageserve/61be205770d931e85316cac4/Sing-2-poster/0x0.jpg?fit=bounds&format=jpg&width=960",
-      "type": "movie",
+      "type": "movies",
       "watched": false,
       "id": 5
     },
@@ -45,14 +45,14 @@
     {
       "title": "doctor strange in the multiverse of madness",
       "image": "https://static.wikia.nocookie.net/marvelcinematicuniverse/images/b/be/Doctor_Strange_Poster_2.jpg",
-      "type": "movie",
+      "type": "movies",
       "watched": false,
       "id": 8
     },
     {
       "title": "The Wolf of Wall street ",
       "image": "https://m.media-amazon.com/images/I/91m2MB2lYFL._SL1500_.jpg",
-      "type": "movie",
+      "type": "movies",
       "watched": false,
       "id": 12
     },
@@ -62,6 +62,20 @@
       "type": "TVseries",
       "watched": false,
       "id": 13
+    },
+    {
+      "title": "movie",
+      "image": "https://m.media-amazon.com/images/I/91m2MB2lYFL._SL1500_.jpg",
+      "type": "movies",
+      "watched": false,
+      "id": 14
+    },
+    {
+      "title": "movie",
+      "image": "https://mysteriouswritings.com/wp-content/uploads/2017/02/movie.jpg",
+      "type": "movies",
+      "watched": false,
+      "id": 15
     }
   ]
 }

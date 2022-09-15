@@ -4,7 +4,7 @@ import Moviecard from './Moviecard';
 
 const Movies = ({shows, onDeleteShow, onUpdateShow, isLoggedIn}) => {
   const navigate = useNavigate();
-  const movies = shows.filter(show => show.type === "movie");
+  const movies = shows.filter(show => show.type === "movies");
   
   const handleClick =(e)=>{        
     navigate(`/${e.target.name}`)       

@@ -23,7 +23,7 @@ const NewMovieForm = ({onAddShow}) => {
     e.preventDefault()
     
     if (newShow.title === "" || newShow.type === ""){
-      alert("enter movie title and chose Movie or TV series")
+      alert("Enter title and chose Movie or TV series")
     }else{
       fetch(dataURL, {
         method : "POST",
@@ -33,11 +33,7 @@ const NewMovieForm = ({onAddShow}) => {
       .then(resp => resp.json())
       .then(data => {          
         onAddShow(data)
-        if (data.type === "movie"){
-        navigate('/movies')
-        }else{
-        navigate("/tvseries")
-        }
+        navigate(`/${data.type}`)
       })
       .catch(error => alert(error))
 
@@ -55,7 +51,7 @@ const NewMovieForm = ({onAddShow}) => {
       <form onSubmit={handleSubmit} >
         <input onChange={handleInputChange} type="text" name="title" placeholder="Title"  />
         <input onChange={handleInputChange} type="text" name="image" placeholder="Image URL" />
-        <label>Movie<input onChange={handleInputChange} type="radio" name="type" value="movie" checked={newShow.type ==="movie"}/></label>
+        <label>Movie<input onChange={handleInputChange} type="radio" name="type" value="movies" checked={newShow.type ==="movies"}/></label>
         <label>TV Series<input onChange={handleInputChange} type="radio" name="type" value="TVseries" checked={newShow.type ==="TVseries"}/></label>
         <button type="submit">Add to Watchlist</button>
       </form>
